@@ -1,0 +1,27 @@
+#应用名称
+spring:
+    application:
+        name: tbay-system-user-center
+#端口
+server:
+    port: 9102
+#feign hystrix 配置
+hystrix:
+    command:
+        default:
+            circuitBreaker:
+                #设置断路器是否起作用。默认为true
+                enabled: true
+            execution:
+                timeout:
+                    enabled: true
+#断路由设置
+#feign:
+#  hystrix:
+#    enabled: true
+
+#ribbon:
+#    MaxAutoRetries: 0
+#    MaxAutoRetriesNextServer: 0
+#    OkToRetryOnAllOperations: false
+#    ReadTimeout: 100000

@@ -1,0 +1,51 @@
+断路由
+1.调用的工程开启Fegin断路由配置(XXXApplication.yml)
+#断路由设置
+feign:
+  hystrix:
+    enabled: true
+2.@FeignClient(name = "tbay-system-user-center",fallback = SchedualHystric.class)
+3.继承要断路由的接口，并实现对应断路由的方法
+
+zuul
+1.负载均衡
+2.拦截过滤
+
+config配置优先级：
+1. 命令行参数。
+2. 通过 System.getProperties() 获取的 Java 系统参数。
+3. 操作系统环境变量。
+4. 从 java:comp/env 得到的 JNDI 属性。
+5. 通过 RandomValuePropertySource 生成的“random.*”属性。
+6. 应用 Jar 文件之外的属性文件(application.properties)。
+7. 应用 Jar 文件内部的属性文件(application.properties)。
+8. 在应用配置 Java 类（包含“@Configuration”注解的 Java 类）中通过“@PropertySource”注解声明的属性文件。
+9. 通过“SpringApplication.setDefaultProperties”声明的默认属性。
+
+client两种识别配置文件的方式
+
+http://blog.csdn.net/liaokailin/article/details/51307215
+http://blog.csdn.net/jeikerxiao/article/details/78914132
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

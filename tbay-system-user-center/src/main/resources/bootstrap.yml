@@ -1,0 +1,16 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8101/eureka/
+spring:
+    cloud:
+        config:
+            discovery:
+                #参数设置为 true，开启通过服务来访问 Spring Cloud Config Server 的功能
+                enabled: true
+                #指定配置中心的服务名,便于扩展为高可用配置集群
+                serviceId: tbay-system-config-server
+            #表示应用名称,在client中通过spring.config.name配置
+            name: usercenter
+            #profile:表示获取指定环境下配置，例如开发环境、测试环境、生产环境 默认值default
+            profile: dev
